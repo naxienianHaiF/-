@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<request>
+    
+    <requestHead>
+        
+        <consumerSeqNo>10fc5e09-b1aa-4f65-ad9e-b7c98b55b416</consumerSeqNo>
+        
+        <consumerID>changanzaixian</consumerID>
+        
+        <requestType>PreciseQuote</requestType>
+        
+        <passWord/>
+        
+        <channelType>01</channelType>
+        
+        <product>01</product>
+        
+        <regionCode>370100</regionCode>
+        
+        <version/>
+    
+    </requestHead>
+    
+    <requestBody>
+        
+        <seqNo>COMMFAMILYCAR689276201609210000000207</seqNo>
+        
+        <businessTypeCI/>
+        
+        <businessTypeBI/>
+        
+        <startDateCIP>2016-09-22 00:00</startDateCIP>
+        
+        <endDateCIP>2017-09-21 24:00</endDateCIP>
+        
+        <startDateBZ>2016-09-22 00:00</startDateBZ>
+        
+        <endDateBZ>2017-09-21 24:00</endDateBZ>
+        
+        <instantInureFlagBI>0</instantInureFlagBI>
+        
+        <instantInureFlagCI>0</instantInureFlagCI>
+        
+        <expectDiscount>0</expectDiscount>
+        
+        <inDoorFlag/>
+        
+        <carTax>
+            
+            <taxFlag>N</taxFlag>
+            
+            <revenue/>
+            
+            <taxPayerName>北京</taxPayerName>
+            
+            <taxPayerCertiType>01</taxPayerCertiType>
+            
+            <taxPayerCertiCode>142729199101022140</taxPayerCertiCode>
+            
+            <taxPayerIdentificationCode>142729199101022140</taxPayerIdentificationCode>
+            
+            <lastTaxDate/>
+            
+            <lastBZendDate/>
+            
+            <insuredName/>
+            
+            <departmentNolocal/>
+            
+            <declareDate/>
+            
+            <taxRegistryNumber/>
+            
+            <annualTax>
+                
+                <taxStartDate>2016-01-01</taxStartDate>
+                
+                <taxEndDate>2016-12-31</taxEndDate>
+                
+                <paid/>
+                
+                <deRate/>
+            
+            </annualTax>
+        
+        </carTax>
+        
+        <car>
+            
+            <pmQueryNo/>
+            
+            <licenseNo>鲁A01334</licenseNo>
+            
+            <importFlag>0</importFlag>
+            
+            <carKindCode>KA</carKindCode>
+            
+            <modelCode>KYD1058SHT</modelCode>
+            
+            <modelName>别克SGM7163ATA轿车</modelName>
+            
+            <frameNo>LSFHJKKHDG7446789</frameNo>
+            
+            <vinNo>LSFHJKKHDG7446789</vinNo>
+            
+            <engineNo>468535789</engineNo>
+            
+            <enrollDate>2015-07-20</enrollDate>
+            
+            <userYear/>
+            
+            <runMiles/>
+            
+            <colorCode/>
+            
+            <runAreaCode>11</runAreaCode>
+            
+            <purchasePrice>103800</purchasePrice>
+            
+            <actualValue>95080.8</actualValue>
+            
+            <transferDate/>
+            
+            <noLicenseFlag>0</noLicenseFlag>
+            
+            <chgOwnerFlag>0</chgOwnerFlag>
+            
+            <vehicleBrand/>
+            
+            <noDamageYears/>
+            
+            <loanVehicleFlag>0</loanVehicleFlag>
+            
+            <specialCarFlag/>
+            
+            <fuelType>0</fuelType>
+            
+            <net/>
+            
+            <exhaustScale>1598</exhaustScale>
+            
+            <vehicleCategory>K33</vehicleCategory>
+            
+            <powerScale>78</powerScale>
+            
+            <seatCount>5</seatCount>
+            
+            <carBookingTime>2015-07-20</carBookingTime>
+            
+            <certificateDateBJ/>
+            
+            <certificateType/>
+            
+            <certificateNo/>
+            
+            <carFairValue>95080.8</carFairValue>
+            
+            <carRegiste>0</carRegiste>
+            
+            <industryModelCode>BTYPKZUE0003</industryModelCode>
+            
+            <usedCarType/>
+            
+            <depreciation>0.6</depreciation>
+            
+            <isPrintModelAlias/>
+            
+            <carType2>01</carType2>
+            
+            <carType3>067</carType3>
+        
+        </car>
+        
+        <privys>
+            
+            <privy>
+                
+                <insuredFlag>1000000</insuredFlag>
+                
+                <insuredName>北京</insuredName>
+                
+                <insuredNature>3</insuredNature>
+                
+                <insuredType/>
+                
+                <identifyType>01</identifyType>
+                
+                <identifyNumber>142788198902063546</identifyNumber>
+                
+                <mobile/>
+                
+                <sex/>
+                
+                <drivingLicenseNo/>
+                
+                <driverAge/>
+                
+                <acceptLicenseDate/>
+                
+                <mainDriverFlag/>
+                
+                <driverType/>
+                
+                <carinsureDrelation>1</carinsureDrelation>
+                
+                <birthday/>
+            
+            </privy>
+            
+            <privy>
+                
+                <insuredFlag>0100000</insuredFlag>
+                
+                <insuredName>北京</insuredName>
+                
+                <insuredNature>3</insuredNature>
+                
+                <insuredType/>
+                
+                <identifyType>01</identifyType>
+                
+                <identifyNumber>142788198902063546</identifyNumber>
+                
+                <mobile/>
+                
+                <sex/>
+                
+                <drivingLicenseNo/>
+                
+                <driverAge/>
+                
+                <acceptLicenseDate/>
+                
+                <mainDriverFlag/>
+                
+                <driverType/>
+                
+                <carinsureDrelation>1</carinsureDrelation>
+                
+                <birthday/>
+            
+            </privy>
+            
+            <privy>
+                
+                <insuredFlag>0010000</insuredFlag>
+                
+                <insuredName>北京</insuredName>
+                
+                <insuredNature>3</insuredNature>
+                
+                <insuredType/>
+                
+                <identifyType>01</identifyType>
+                
+                <identifyNumber>142788198902063546</identifyNumber>
+                
+                <mobile/>
+                
+                <sex/>
+                
+                <drivingLicenseNo/>
+                
+                <driverAge/>
+                
+                <acceptLicenseDate/>
+                
+                <mainDriverFlag/>
+                
+                <driverType/>
+                
+                <carinsureDrelation>1</carinsureDrelation>
+                
+                <birthday/>
+            
+            </privy>
+            
+            <privy>
+                
+                <insuredFlag>0010000</insuredFlag>
+                
+                <insuredName>北京</insuredName>
+                
+                <insuredNature>3</insuredNature>
+                
+                <insuredType/>
+                
+                <identifyType>01</identifyType>
+                
+                <identifyNumber>142729199101022140</identifyNumber>
+                
+                <mobile/>
+                
+                <sex/>
+                
+                <drivingLicenseNo/>
+                
+                <driverAge>0</driverAge>
+                
+                <acceptLicenseDate/>
+                
+                <mainDriverFlag/>
+                
+                <driverType/>
+                
+                <carinsureDrelation/>
+                
+                <birthday/>
+            
+            </privy>
+        
+        </privys>
+        
+        <kinds>
+            
+            <kind>
+                
+                <kindCode>BZ</kindCode>
+                
+                <quantity/>
+                
+                <unitAmount/>
+                
+                <amount>122000</amount>
+                
+                <deductibleRate/>
+                
+                <modeCode/>
+                
+                <kindFlag>0</kindFlag>
+                
+                <deductibleAmount/>
+            
+            </kind>
+            
+            <kind>
+                
+                <kindCode>A</kindCode>
+                
+                <quantity/>
+                
+                <unitAmount/>
+                
+                <amount>95080.8</amount>
+                
+                <deductibleRate/>
+                
+                <modeCode>0</modeCode>
+                
+                <kindFlag>1</kindFlag>
+                
+                <deductibleAmount/>
+            
+            </kind>
+            
+            <kind>
+                
+                <kindCode>AA</kindCode>
+                
+                <quantity/>
+                
+                <unitAmount/>
+                
+                <amount/>
+                
+                <modeCode/>
+                
+                <kindFlag/>
+                
+                <deductibleAmount/>
+            
+            </kind>
+            
+            <kind>
+                
+                <kindCode>B</kindCode>
+                
+                <quantity/>
+                
+                <unitAmount/>
+                
+                <amount>500000</amount>
+                
+                <deductibleRate/>
+                
+                <modeCode/>
+                
+                <kindFlag>1</kindFlag>
+                
+                <deductibleAmount/>
+            
+            </kind>
+            
+            <kind>
+                
+                <kindCode>AB</kindCode>
+                
+                <quantity/>
+                
+                <unitAmount/>
+                
+                <amount/>
+                
+                <modeCode/>
+                
+                <kindFlag/>
+                
+                <deductibleAmount/>
+            
+            </kind>
+            
+            <kind>
+                
+                <kindCode>D11</kindCode>
+                
+                <quantity/>
+                
+                <unitAmount/>
+                
+                <amount>10000</amount>
+                
+                <deductibleRate/>
+                
+                <modeCode/>
+                
+                <kindFlag>1</kindFlag>
+                
+                <deductibleAmount/>
+            
+            </kind>
+            
+            <kind>
+                
+                <kindCode>AD11</kindCode>
+                
+                <quantity/>
+                
+                <unitAmount/>
+                
+                <amount/>
+                
+                <modeCode/>
+                
+                <kindFlag/>
+                
+                <deductibleAmount/>
+            
+            </kind>
+        
+        </kinds>
+        
+        <checks>
+            
+            <check>
+                
+                <renewalFlag/>
+                
+                <checkFlag/>
+                
+                <querySequenceNo/>
+                
+                <question/>
+            
+            </check>
+        
+        </checks>
+    
+    </requestBody>
+</request>

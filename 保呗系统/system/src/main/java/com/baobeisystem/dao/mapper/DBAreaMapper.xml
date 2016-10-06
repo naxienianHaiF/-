@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.baobeisystem.dao.waiwang.DBAreaDao">
+	<!-- 根据用户名进行查询 -->
+	<select id="getDBAreaByUsername" resultType="DBArea" parameterType="string">
+		select * from DB_AREA where AREA_CODE=#{AREA_CODE}
+	</select>
+
+	<!-- 根据用区名查询车牌前缀 -->
+	<select id="getLicensePrefixByShortname" resultType="string" parameterType="string">
+		select LICENSE_PREFIX from DB_AREA where AREA_NAME=#{AREA_NAME} 
+			AND(AREA_LEVEL='2' or AREA_LEVEL='3');
+	</select>	
+	
+</mapper>

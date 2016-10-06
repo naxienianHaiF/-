@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.baobeisystem.dao.user.BBSuserDao">
+	<!-- 根据用户名进行查询 -->
+	<select id="getBBSuserByUsername" resultType="BBSuser" parameterType="string">
+		select * from bbsuser where username=#{username}
+	</select>
+	
+	<!-- 根据用户名进行更改信息 -->
+	<update id="updateBBSuserByUsername" parameterType="BBSuser">
+		update bbsuser
+		<set>
+			<if test="address!=null and address!=''">address=#{address},</if>
+			<if test="age!=0">age=#{age},</if>
+			<if test="email!=null and email!=''">email=#{email},</if>
+			<if test="job!=null and job!=''">job=#{job},</if>
+			<if test="nickname!=null and nickname!=''">nickname=#{nickname},</if>
+			<if test="password!=null and password!=''">password=#{password},</if>
+			<if test="phonenumber!=null and phonenumber!=''">phonenumber=#{phonenumber},</if>
+			<if test="signature!=null and signature!=''">signature=#{signature},</if>
+		</set>
+		where username=#{username}
+	</update>
+	
+	<!-- 插入数据 -->
+	<insert id="registerUser" parameterType="BBSuser" keyProperty="id">
+		insert into bbsuser(username,password,email) value
+		(#{username},#{password},#{email})		
+	</insert>
+	
+	
+</mapper>

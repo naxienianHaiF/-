@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">   
+    
+    <!-- 配置控制器 -->
+    <context:annotation-config />  
+    <context:component-scan base-package="com.baobeisystem.controller" />
+    <!-- json配置,用于将对象转换为 JSON  -->
+    <!-- <bean id="stringConverter"  
+        class="org.springframework.http.converter.StringHttpMessageConverter">  
+        <property name="supportedMediaTypes">  
+            <list>  
+                <value>text/plain;charset=UTF-8</value>  
+            </list>  
+        </property>  
+    </bean>  
+    <bean id="jsonConverter"  
+        class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>  
+   
+    <bean  
+        class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">  
+        <property name="messageConverters">  
+            <list>  
+                <ref bean="stringConverter" />  
+                <ref bean="jsonConverter" />  
+            </list>  
+        </property>  
+    </bean>   -->
+    
+<!--     <mvc:default-servlet-handler/> -->
+    <!-- 配置拦截器 -->
+	<!-- <mvc:interceptors>
+		<bean class="wjh.interceptor.InterceptorDemo" />
+	</mvc:interceptors> -->
+    
+    <!-- 配置视图解析器 -->
+    <!-- UrlBasedViewResolver：直接根据试图的名称解析视图，视图的名称会匹配一个物理视图的定义 -->
+    <bean id="viewResolver" 
+    	class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+    	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+    	<property name="prefix" value="/WEB-INF/views/"/>
+    	<property name="suffix" value=".jsp" /> 
+	</bean>
+	
+	<!-- 数据源:DriverManagerDataSource 
+		dataSource元素使用基本的JDBC数据源接口来配置JDBC连接对象的资源	
+	-->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/baobei" />
+		<property name="username" value="root" />
+		<property name="password" value="Wjh1992" />
+	</bean>
+
+	<!-- 自动扫描了所有的XxxxMapper.xml对应的mapper接口文件，这样就不用一个一个手动配置Mpper的映射了，只要Mapper接口类和Mapper映射文件对应起来就可以了。 -->
+<!-- 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.baobeisystem.dao.BBSuserDao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBBSuser" />
+	</bean> -->
+
+	<!-- ========================================针对myBatis的配置项============================== -->
+    <!-- 配置sqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+      <!--   实例化sqlSessionFactory时需要使用上述配置好的数据源以及SQL映射文件 -->
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:configuration.xml" />
+      <!--   <property name="mapperLocations" value="classpath:com/baobeisystem/dao/mapper/BBSuserMapper.xml" />
+        <property name="typeAliasesPackage" value="com.baobeisystem.entity"></property> -->
+        
+    </bean>
+    
+<!--     <bean id="bbsuserMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    	<property name="mapperInterface" value="com.baobeisystem.dao.mapper.BBSuserMapper"/>
+    	指定SqlSessionFactoryBean对象
+    	<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean> -->
+    
+    
+    <!-- 配置扫描器 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+     <!--    扫描me.gacl.dao这个包以及它的子包下的所有映射接口类 -->
+        <property name="basePackage" value="com.baobeisystem.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+	
+	<!-- ========================================分隔线========================================= -->
+    <!-- 配置Spring的事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+	<!-- 使用annotation注解方式配置事务 -->	
+	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+	
+	
+	<!-- =============================数据源二================================= -->
+<!-- 	<bean id="dataSource2"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://123.56.104.236:3306/caic_basic" />
+		<property name="username" value="root" />
+		<property name="password" value="sinosoft" />
+		配置初始化大小、最小、最大
+		<property name="initialSize" value="1" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="20" />
+
+		配置获取连接等待超时的时间
+		<property name="maxWait" value="60000" />
+		配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		
+	</bean>
+
+	
+    配置sqlSessionFactory
+    <bean id="sqlSessionFactory2" class="org.mybatis.spring.SqlSessionFactoryBean">
+        实例化sqlSessionFactory时需要使用上述配置好的数据源以及SQL映射文件
+        <property name="dataSource" ref="dataSource2" />
+        <property name="configLocation" value="classpath:configuration.xml" />
+        <property name="mapperLocations" value="classpath:com/baobeisystem/dao/mapper/DBAreaMapper.xml"></property>
+    </bean>
+    
+    配置扫描器
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        扫描me.gacl.dao这个包以及它的子包下的所有映射接口类
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory2" />
+        <property name="basePackage" value="com.baobeisystem.dao" />
+    </bean>
+	
+	========================================分隔线=========================================
+    配置Spring的事务管理器
+    <bean id="transactionManager2" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource2" />
+    </bean> -->	
+    
+    
+    
+</beans>

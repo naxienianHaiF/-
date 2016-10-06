@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- 别名 -->
+	<typeAliases>
+		<typeAlias  alias="BBSuser" type="com.baobeisystem.entity.BBSuser" />
+		<typeAlias  alias="DBArea" type="com.baobeisystem.entity.DBArea"/>
+		<typeAlias alias="OrderInfo" type="com.baobeisystem.entity.OrderInfo" /> 
+	</typeAliases>
+	
+<!-- 	<mappers>
+		<mapper resource="com/baobeisystem/dao/mapper/BBSuserMapper.xml"/>
+		<mapper resource="wjh/dao/xml/UserTimeMapping.xml" />
+		<mapper resource="com/baobeisystem/dao/mapper/DBAreaMapper.xml"/>
+	</mappers> -->
+</configuration>

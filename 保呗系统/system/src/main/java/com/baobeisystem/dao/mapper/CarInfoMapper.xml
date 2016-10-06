@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.baobeisystem.dao.car.CarInfoDao" >
+  <resultMap id="BaseResultMap" type="com.baobeisystem.entity.CarInfo" >
+    <id column="LICENSE_NO" property="licenseNo" jdbcType="VARCHAR" />
+    <id column="OWNER" property="owner" jdbcType="VARCHAR" />
+    <result column="ENGINE_NO" property="engineNo" jdbcType="VARCHAR" />
+    <result column="FRAME_NO" property="frameNo" jdbcType="VARCHAR" />
+    <result column="VIN_NO" property="vinNo" jdbcType="VARCHAR" />
+    <result column="FAMILY_CODE" property="familyCode" jdbcType="VARCHAR" />
+    <result column="FAMILY_NAME" property="familyName" jdbcType="VARCHAR" />
+    <result column="MODEL_CODE" property="modelCode" jdbcType="VARCHAR" />
+    <result column="MODEL_CNAME" property="modelCname" jdbcType="VARCHAR" />
+    <result column="IMPORT_FLAG" property="importFlag" jdbcType="VARCHAR" />
+    <result column="CAR_NAME" property="carName" jdbcType="VARCHAR" />
+    <result column="ENROLL_DATE" property="enrollDate" jdbcType="TIMESTAMP" />
+    <result column="RUN_MILES" property="runMiles" jdbcType="DOUBLE" />
+    <result column="EXHAUST_SCALE" property="exhaustScale" jdbcType="VARCHAR" />
+    <result column="FUEL_TYPE" property="fuelType" jdbcType="VARCHAR" />
+    <result column="SEAT_COUNT" property="seatCount" jdbcType="INTEGER" />
+    <result column="TON_COUNT" property="tonCount" jdbcType="DOUBLE" />
+    <result column="KERB_MASS" property="kerbMass" jdbcType="DOUBLE" />
+    <result column="BRAND_CODE" property="brandCode" jdbcType="VARCHAR" />
+    <result column="BRAND_NAME" property="brandName" jdbcType="VARCHAR" />
+    <result column="PURCHASE_PRICE" property="purchasePrice" jdbcType="DOUBLE" />
+    <result column="ACTUAL_VALUE" property="actualValue" jdbcType="DOUBLE" />
+    <result column="COLOR_CODE" property="colorCode" jdbcType="VARCHAR" />
+    <result column="MAKE_DATE" property="makeDate" jdbcType="TIMESTAMP" />
+    <result column="TRANSFER_DATE" property="transferDate" jdbcType="TIMESTAMP" />
+    <result column="QUERY_CODE" property="queryCode" jdbcType="VARCHAR" />
+    <result column="SEARCH_SEQUENCE_NO" property="searchSequenceNo" jdbcType="VARCHAR" />
+    <result column="MANUFACTOR_CODE" property="manufactorCode" jdbcType="VARCHAR" />
+    <result column="MANUFACTOR_NAME" property="manufactorName" jdbcType="VARCHAR" />
+    <result column="JY_MODEL_CODE" property="jyModelCode" jdbcType="VARCHAR" />
+    <result column="INDUSTRY_MODEL_CODE" property="industryModelCode" jdbcType="VARCHAR" />
+    <result column="CAR_TYPE2" property="carType2" jdbcType="VARCHAR" />
+    <result column="CAR_TYPE3" property="carType3" jdbcType="VARCHAR" />
+    <result column="LICENSE_FLAG" property="licenseFlag" jdbcType="VARCHAR" />
+    <result column="COUNTRY_NATURE" property="countryNature" jdbcType="VARCHAR" />
+    <result column="OTHER_PROVINCE_FLAG" property="otherProvinceFlag" jdbcType="VARCHAR" />
+    <result column="VISIT_FLAG" property="visitFlag" jdbcType="VARCHAR" />
+    <result column="CAR_TRANSFER" property="carTransfer" jdbcType="VARCHAR" />
+    <result column="LOAN_VEHICLE_FLAG" property="loanVehicleFlag" jdbcType="VARCHAR" />
+    <result column="CREATED_DATE" property="createdDate" jdbcType="TIMESTAMP" />
+    <result column="UPDATED_DATE" property="updatedDate" jdbcType="TIMESTAMP" />
+    <result column="DELETED_DATE" property="deletedDate" jdbcType="TIMESTAMP" />
+    <result column="DELETED_FLAG" property="deletedFlag" jdbcType="VARCHAR" />
+    <result column="START_DATE" property="startDate" jdbcType="TIMESTAMP" />
+    <result column="END_DATE" property="endDate" jdbcType="TIMESTAMP" />
+    <result column="VALIDSTATUS" property="validstatus" jdbcType="VARCHAR" />
+    <result column="RUN_AREA_CODE" property="runAreaCode" jdbcType="VARCHAR" />
+    <result column="CHECK_NO" property="checkNo" jdbcType="VARCHAR" />
+    <result column="CHECK_CODE" property="checkCode" jdbcType="VARCHAR" />
+    <result column="PMUSE_TYPE" property="pmuseType" jdbcType="VARCHAR" />
+    <result column="RACK_NO" property="rackNo" jdbcType="VARCHAR" />
+    <result column="LIMITLOAD_PERSON" property="limitloadPerson" jdbcType="VARCHAR" />
+    <result column="INEFFECTUAL_DATE" property="ineffectualDate" jdbcType="TIMESTAMP" />
+    <result column="VEHICLE_BRAND2" property="vehicleBrand2" jdbcType="VARCHAR" />
+    <result column="LASTCHECK_DATE" property="lastcheckDate" jdbcType="TIMESTAMP" />
+    <result column="REJECT_DATE" property="rejectDate" jdbcType="TIMESTAMP" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+    <result column="HAULAGE" property="haulage" jdbcType="VARCHAR" />
+    <result column="CHANNEL_TYPE" property="channelType" jdbcType="VARCHAR" />
+    <result column="SALE_PRICE" property="salePrice" jdbcType="VARCHAR" />
+    <result column="VEHICLECATE_GORY" property="vehiclecateGory" jdbcType="VARCHAR" />
+    <result column="USE_TYPE" property="useType" jdbcType="VARCHAR" />
+    <result column="TRAFFIC_STATE" property="trafficState" jdbcType="VARCHAR" />
+    <result column="VEHICLE_CATEGORY" property="vehicleCategory" jdbcType="VARCHAR" />
+    <result column="IDENTIFY_NUMBER" property="identifyNumber" jdbcType="VARCHAR" />
+    <result column="MOBILE" property="mobile" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    LICENSE_NO, OWNER, ENGINE_NO, FRAME_NO, VIN_NO, FAMILY_CODE, FAMILY_NAME, MODEL_CODE, 
+    MODEL_CNAME, IMPORT_FLAG, CAR_NAME, ENROLL_DATE, RUN_MILES, EXHAUST_SCALE, FUEL_TYPE, 
+    SEAT_COUNT, TON_COUNT, KERB_MASS, BRAND_CODE, BRAND_NAME, PURCHASE_PRICE, ACTUAL_VALUE, 
+    COLOR_CODE, MAKE_DATE, TRANSFER_DATE, QUERY_CODE, SEARCH_SEQUENCE_NO, MANUFACTOR_CODE, 
+    MANUFACTOR_NAME, JY_MODEL_CODE, INDUSTRY_MODEL_CODE, CAR_TYPE2, CAR_TYPE3, LICENSE_FLAG, 
+    COUNTRY_NATURE, OTHER_PROVINCE_FLAG, VISIT_FLAG, CAR_TRANSFER, LOAN_VEHICLE_FLAG, 
+    CREATED_DATE, UPDATED_DATE, DELETED_DATE, DELETED_FLAG, START_DATE, END_DATE, VALIDSTATUS, 
+    RUN_AREA_CODE, CHECK_NO, CHECK_CODE, PMUSE_TYPE, RACK_NO, LIMITLOAD_PERSON, INEFFECTUAL_DATE, 
+    VEHICLE_BRAND2, LASTCHECK_DATE, REJECT_DATE, STATUS, HAULAGE, CHANNEL_TYPE, SALE_PRICE, 
+    VEHICLECATE_GORY, USE_TYPE, TRAFFIC_STATE, VEHICLE_CATEGORY, IDENTIFY_NUMBER, MOBILE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.baobeisystem.entity.CarInfoKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from CAR_INFO
+    where LICENSE_NO = #{licenseNo,jdbcType=VARCHAR}
+      and OWNER = #{owner,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.baobeisystem.entity.CarInfoKey" >
+    delete from CAR_INFO
+    where LICENSE_NO = #{licenseNo,jdbcType=VARCHAR}
+      and OWNER = #{owner,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.baobeisystem.entity.CarInfo" >
+    insert into CAR_INFO (LICENSE_NO, OWNER, ENGINE_NO, 
+      FRAME_NO, VIN_NO, FAMILY_CODE, 
+      FAMILY_NAME, MODEL_CODE, MODEL_CNAME, 
+      IMPORT_FLAG, CAR_NAME, ENROLL_DATE, 
+      RUN_MILES, EXHAUST_SCALE, FUEL_TYPE, 
+      SEAT_COUNT, TON_COUNT, KERB_MASS, 
+      BRAND_CODE, BRAND_NAME, PURCHASE_PRICE, 
+      ACTUAL_VALUE, COLOR_CODE, MAKE_DATE, 
+      TRANSFER_DATE, QUERY_CODE, SEARCH_SEQUENCE_NO, 
+      MANUFACTOR_CODE, MANUFACTOR_NAME, JY_MODEL_CODE, 
+      INDUSTRY_MODEL_CODE, CAR_TYPE2, CAR_TYPE3, 
+      LICENSE_FLAG, COUNTRY_NATURE, OTHER_PROVINCE_FLAG, 
+      VISIT_FLAG, CAR_TRANSFER, LOAN_VEHICLE_FLAG, 
+      CREATED_DATE, UPDATED_DATE, DELETED_DATE, 
+      DELETED_FLAG, START_DATE, END_DATE, 
+      VALIDSTATUS, RUN_AREA_CODE, CHECK_NO, 
+      CHECK_CODE, PMUSE_TYPE, RACK_NO, 
+      LIMITLOAD_PERSON, INEFFECTUAL_DATE, VEHICLE_BRAND2, 
+      LASTCHECK_DATE, REJECT_DATE, STATUS, 
+      HAULAGE, CHANNEL_TYPE, SALE_PRICE, 
+      VEHICLECATE_GORY, USE_TYPE, TRAFFIC_STATE, 
+      VEHICLE_CATEGORY, IDENTIFY_NUMBER, MOBILE
+      )
+    values (#{licenseNo,jdbcType=VARCHAR}, #{owner,jdbcType=VARCHAR}, #{engineNo,jdbcType=VARCHAR}, 
+      #{frameNo,jdbcType=VARCHAR}, #{vinNo,jdbcType=VARCHAR}, #{familyCode,jdbcType=VARCHAR}, 
+      #{familyName,jdbcType=VARCHAR}, #{modelCode,jdbcType=VARCHAR}, #{modelCname,jdbcType=VARCHAR}, 
+      #{importFlag,jdbcType=VARCHAR}, #{carName,jdbcType=VARCHAR}, #{enrollDate,jdbcType=TIMESTAMP}, 
+      #{runMiles,jdbcType=DOUBLE}, #{exhaustScale,jdbcType=VARCHAR}, #{fuelType,jdbcType=VARCHAR}, 
+      #{seatCount,jdbcType=INTEGER}, #{tonCount,jdbcType=DOUBLE}, #{kerbMass,jdbcType=DOUBLE}, 
+      #{brandCode,jdbcType=VARCHAR}, #{brandName,jdbcType=VARCHAR}, #{purchasePrice,jdbcType=DOUBLE}, 
+      #{actualValue,jdbcType=DOUBLE}, #{colorCode,jdbcType=VARCHAR}, #{makeDate,jdbcType=TIMESTAMP}, 
+      #{transferDate,jdbcType=TIMESTAMP}, #{queryCode,jdbcType=VARCHAR}, #{searchSequenceNo,jdbcType=VARCHAR}, 
+      #{manufactorCode,jdbcType=VARCHAR}, #{manufactorName,jdbcType=VARCHAR}, #{jyModelCode,jdbcType=VARCHAR}, 
+      #{industryModelCode,jdbcType=VARCHAR}, #{carType2,jdbcType=VARCHAR}, #{carType3,jdbcType=VARCHAR}, 
+      #{licenseFlag,jdbcType=VARCHAR}, #{countryNature,jdbcType=VARCHAR}, #{otherProvinceFlag,jdbcType=VARCHAR}, 
+      #{visitFlag,jdbcType=VARCHAR}, #{carTransfer,jdbcType=VARCHAR}, #{loanVehicleFlag,jdbcType=VARCHAR}, 
+      #{createdDate,jdbcType=TIMESTAMP}, #{updatedDate,jdbcType=TIMESTAMP}, #{deletedDate,jdbcType=TIMESTAMP}, 
+      #{deletedFlag,jdbcType=VARCHAR}, #{startDate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP}, 
+      #{validstatus,jdbcType=VARCHAR}, #{runAreaCode,jdbcType=VARCHAR}, #{checkNo,jdbcType=VARCHAR}, 
+      #{checkCode,jdbcType=VARCHAR}, #{pmuseType,jdbcType=VARCHAR}, #{rackNo,jdbcType=VARCHAR}, 
+      #{limitloadPerson,jdbcType=VARCHAR}, #{ineffectualDate,jdbcType=TIMESTAMP}, #{vehicleBrand2,jdbcType=VARCHAR}, 
+      #{lastcheckDate,jdbcType=TIMESTAMP}, #{rejectDate,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}, 
+      #{haulage,jdbcType=VARCHAR}, #{channelType,jdbcType=VARCHAR}, #{salePrice,jdbcType=VARCHAR}, 
+      #{vehiclecateGory,jdbcType=VARCHAR}, #{useType,jdbcType=VARCHAR}, #{trafficState,jdbcType=VARCHAR}, 
+      #{vehicleCategory,jdbcType=VARCHAR}, #{identifyNumber,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.baobeisystem.entity.CarInfo" >
+    insert into CAR_INFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="licenseNo != null" >
+        LICENSE_NO,
+      </if>
+      <if test="owner != null" >
+        OWNER,
+      </if>
+      <if test="engineNo != null" >
+        ENGINE_NO,
+      </if>
+      <if test="frameNo != null" >
+        FRAME_NO,
+      </if>
+      <if test="vinNo != null" >
+        VIN_NO,
+      </if>
+      <if test="familyCode != null" >
+        FAMILY_CODE,
+      </if>
+      <if test="familyName != null" >
+        FAMILY_NAME,
+      </if>
+      <if test="modelCode != null" >
+        MODEL_CODE,
+      </if>
+      <if test="modelCname != null" >
+        MODEL_CNAME,
+      </if>
+      <if test="importFlag != null" >
+        IMPORT_FLAG,
+      </if>
+      <if test="carName != null" >
+        CAR_NAME,
+      </if>
+      <if test="enrollDate != null" >
+        ENROLL_DATE,
+      </if>
+      <if test="runMiles != null" >
+        RUN_MILES,
+      </if>
+      <if test="exhaustScale != null" >
+        EXHAUST_SCALE,
+      </if>
+      <if test="fuelType != null" >
+        FUEL_TYPE,
+      </if>
+      <if test="seatCount != null" >
+        SEAT_COUNT,
+      </if>
+      <if test="tonCount != null" >
+        TON_COUNT,
+      </if>
+      <if test="kerbMass != null" >
+        KERB_MASS,
+      </if>
+      <if test="brandCode != null" >
+        BRAND_CODE,
+      </if>
+      <if test="brandName != null" >
+        BRAND_NAME,
+      </if>
+      <if test="purchasePrice != null" >
+        PURCHASE_PRICE,
+      </if>
+      <if test="actualValue != null" >
+        ACTUAL_VALUE,
+      </if>
+      <if test="colorCode != null" >
+        COLOR_CODE,
+      </if>
+      <if test="makeDate != null" >
+        MAKE_DATE,
+      </if>
+      <if test="transferDate != null" >
+        TRANSFER_DATE,
+      </if>
+      <if test="queryCode != null" >
+        QUERY_CODE,
+      </if>
+      <if test="searchSequenceNo != null" >
+        SEARCH_SEQUENCE_NO,
+      </if>
+      <if test="manufactorCode != null" >
+        MANUFACTOR_CODE,
+      </if>
+      <if test="manufactorName != null" >
+        MANUFACTOR_NAME,
+      </if>
+      <if test="jyModelCode != null" >
+        JY_MODEL_CODE,
+      </if>
+      <if test="industryModelCode != null" >
+        INDUSTRY_MODEL_CODE,
+      </if>
+      <if test="carType2 != null" >
+        CAR_TYPE2,
+      </if>
+      <if test="carType3 != null" >
+        CAR_TYPE3,
+      </if>
+      <if test="licenseFlag != null" >
+        LICENSE_FLAG,
+      </if>
+      <if test="countryNature != null" >
+        COUNTRY_NATURE,
+      </if>
+      <if test="otherProvinceFlag != null" >
+        OTHER_PROVINCE_FLAG,
+      </if>
+      <if test="visitFlag != null" >
+        VISIT_FLAG,
+      </if>
+      <if test="carTransfer != null" >
+        CAR_TRANSFER,
+      </if>
+      <if test="loanVehicleFlag != null" >
+        LOAN_VEHICLE_FLAG,
+      </if>
+      <if test="createdDate != null" >
+        CREATED_DATE,
+      </if>
+      <if test="updatedDate != null" >
+        UPDATED_DATE,
+      </if>
+      <if test="deletedDate != null" >
+        DELETED_DATE,
+      </if>
+      <if test="deletedFlag != null" >
+        DELETED_FLAG,
+      </if>
+      <if test="startDate != null" >
+        START_DATE,
+      </if>
+      <if test="endDate != null" >
+        END_DATE,
+      </if>
+      <if test="validstatus != null" >
+        VALIDSTATUS,
+      </if>
+      <if test="runAreaCode != null" >
+        RUN_AREA_CODE,
+      </if>
+      <if test="checkNo != null" >
+        CHECK_NO,
+      </if>
+      <if test="checkCode != null" >
+        CHECK_CODE,
+      </if>
+      <if test="pmuseType != null" >
+        PMUSE_TYPE,
+      </if>
+      <if test="rackNo != null" >
+        RACK_NO,
+      </if>
+      <if test="limitloadPerson != null" >
+        LIMITLOAD_PERSON,
+      </if>
+      <if test="ineffectualDate != null" >
+        INEFFECTUAL_DATE,
+      </if>
+      <if test="vehicleBrand2 != null" >
+        VEHICLE_BRAND2,
+      </if>
+      <if test="lastcheckDate != null" >
+        LASTCHECK_DATE,
+      </if>
+      <if test="rejectDate != null" >
+        REJECT_DATE,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="haulage != null" >
+        HAULAGE,
+      </if>
+      <if test="channelType != null" >
+        CHANNEL_TYPE,
+      </if>
+      <if test="salePrice != null" >
+        SALE_PRICE,
+      </if>
+      <if test="vehiclecateGory != null" >
+        VEHICLECATE_GORY,
+      </if>
+      <if test="useType != null" >
+        USE_TYPE,
+      </if>
+      <if test="trafficState != null" >
+        TRAFFIC_STATE,
+      </if>
+      <if test="vehicleCategory != null" >
+        VEHICLE_CATEGORY,
+      </if>
+      <if test="identifyNumber != null" >
+        IDENTIFY_NUMBER,
+      </if>
+      <if test="mobile != null" >
+        MOBILE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="licenseNo != null" >
+        #{licenseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="owner != null" >
+        #{owner,jdbcType=VARCHAR},
+      </if>
+      <if test="engineNo != null" >
+        #{engineNo,jdbcType=VARCHAR},
+      </if>
+      <if test="frameNo != null" >
+        #{frameNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vinNo != null" >
+        #{vinNo,jdbcType=VARCHAR},
+      </if>
+      <if test="familyCode != null" >
+        #{familyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="familyName != null" >
+        #{familyName,jdbcType=VARCHAR},
+      </if>
+      <if test="modelCode != null" >
+        #{modelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modelCname != null" >
+        #{modelCname,jdbcType=VARCHAR},
+      </if>
+      <if test="importFlag != null" >
+        #{importFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="carName != null" >
+        #{carName,jdbcType=VARCHAR},
+      </if>
+      <if test="enrollDate != null" >
+        #{enrollDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="runMiles != null" >
+        #{runMiles,jdbcType=DOUBLE},
+      </if>
+      <if test="exhaustScale != null" >
+        #{exhaustScale,jdbcType=VARCHAR},
+      </if>
+      <if test="fuelType != null" >
+        #{fuelType,jdbcType=VARCHAR},
+      </if>
+      <if test="seatCount != null" >
+        #{seatCount,jdbcType=INTEGER},
+      </if>
+      <if test="tonCount != null" >
+        #{tonCount,jdbcType=DOUBLE},
+      </if>
+      <if test="kerbMass != null" >
+        #{kerbMass,jdbcType=DOUBLE},
+      </if>
+      <if test="brandCode != null" >
+        #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="brandName != null" >
+        #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="purchasePrice != null" >
+        #{purchasePrice,jdbcType=DOUBLE},
+      </if>
+      <if test="actualValue != null" >
+        #{actualValue,jdbcType=DOUBLE},
+      </if>
+      <if test="colorCode != null" >
+        #{colorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="makeDate != null" >
+        #{makeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transferDate != null" >
+        #{transferDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="queryCode != null" >
+        #{queryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="searchSequenceNo != null" >
+        #{searchSequenceNo,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactorCode != null" >
+        #{manufactorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactorName != null" >
+        #{manufactorName,jdbcType=VARCHAR},
+      </if>
+      <if test="jyModelCode != null" >
+        #{jyModelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="industryModelCode != null" >
+        #{industryModelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="carType2 != null" >
+        #{carType2,jdbcType=VARCHAR},
+      </if>
+      <if test="carType3 != null" >
+        #{carType3,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseFlag != null" >
+        #{licenseFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="countryNature != null" >
+        #{countryNature,jdbcType=VARCHAR},
+      </if>
+      <if test="otherProvinceFlag != null" >
+        #{otherProvinceFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="visitFlag != null" >
+        #{visitFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="carTransfer != null" >
+        #{carTransfer,jdbcType=VARCHAR},
+      </if>
+      <if test="loanVehicleFlag != null" >
+        #{loanVehicleFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDate != null" >
+        #{createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedDate != null" >
+        #{updatedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deletedDate != null" >
+        #{deletedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deletedFlag != null" >
+        #{deletedFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null" >
+        #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDate != null" >
+        #{endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validstatus != null" >
+        #{validstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="runAreaCode != null" >
+        #{runAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="checkNo != null" >
+        #{checkNo,jdbcType=VARCHAR},
+      </if>
+      <if test="checkCode != null" >
+        #{checkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="pmuseType != null" >
+        #{pmuseType,jdbcType=VARCHAR},
+      </if>
+      <if test="rackNo != null" >
+        #{rackNo,jdbcType=VARCHAR},
+      </if>
+      <if test="limitloadPerson != null" >
+        #{limitloadPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="ineffectualDate != null" >
+        #{ineffectualDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vehicleBrand2 != null" >
+        #{vehicleBrand2,jdbcType=VARCHAR},
+      </if>
+      <if test="lastcheckDate != null" >
+        #{lastcheckDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rejectDate != null" >
+        #{rejectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="haulage != null" >
+        #{haulage,jdbcType=VARCHAR},
+      </if>
+      <if test="channelType != null" >
+        #{channelType,jdbcType=VARCHAR},
+      </if>
+      <if test="salePrice != null" >
+        #{salePrice,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclecateGory != null" >
+        #{vehiclecateGory,jdbcType=VARCHAR},
+      </if>
+      <if test="useType != null" >
+        #{useType,jdbcType=VARCHAR},
+      </if>
+      <if test="trafficState != null" >
+        #{trafficState,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicleCategory != null" >
+        #{vehicleCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyNumber != null" >
+        #{identifyNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.baobeisystem.entity.CarInfo" >
+    update CAR_INFO
+    <set >
+      <if test="engineNo != null" >
+        ENGINE_NO = #{engineNo,jdbcType=VARCHAR},
+      </if>
+      <if test="frameNo != null" >
+        FRAME_NO = #{frameNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vinNo != null" >
+        VIN_NO = #{vinNo,jdbcType=VARCHAR},
+      </if>
+      <if test="familyCode != null" >
+        FAMILY_CODE = #{familyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="familyName != null" >
+        FAMILY_NAME = #{familyName,jdbcType=VARCHAR},
+      </if>
+      <if test="modelCode != null" >
+        MODEL_CODE = #{modelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modelCname != null" >
+        MODEL_CNAME = #{modelCname,jdbcType=VARCHAR},
+      </if>
+      <if test="importFlag != null" >
+        IMPORT_FLAG = #{importFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="carName != null" >
+        CAR_NAME = #{carName,jdbcType=VARCHAR},
+      </if>
+      <if test="enrollDate != null" >
+        ENROLL_DATE = #{enrollDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="runMiles != null" >
+        RUN_MILES = #{runMiles,jdbcType=DOUBLE},
+      </if>
+      <if test="exhaustScale != null" >
+        EXHAUST_SCALE = #{exhaustScale,jdbcType=VARCHAR},
+      </if>
+      <if test="fuelType != null" >
+        FUEL_TYPE = #{fuelType,jdbcType=VARCHAR},
+      </if>
+      <if test="seatCount != null" >
+        SEAT_COUNT = #{seatCount,jdbcType=INTEGER},
+      </if>
+      <if test="tonCount != null" >
+        TON_COUNT = #{tonCount,jdbcType=DOUBLE},
+      </if>
+      <if test="kerbMass != null" >
+        KERB_MASS = #{kerbMass,jdbcType=DOUBLE},
+      </if>
+      <if test="brandCode != null" >
+        BRAND_CODE = #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="brandName != null" >
+        BRAND_NAME = #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="purchasePrice != null" >
+        PURCHASE_PRICE = #{purchasePrice,jdbcType=DOUBLE},
+      </if>
+      <if test="actualValue != null" >
+        ACTUAL_VALUE = #{actualValue,jdbcType=DOUBLE},
+      </if>
+      <if test="colorCode != null" >
+        COLOR_CODE = #{colorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="makeDate != null" >
+        MAKE_DATE = #{makeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transferDate != null" >
+        TRANSFER_DATE = #{transferDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="queryCode != null" >
+        QUERY_CODE = #{queryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="searchSequenceNo != null" >
+        SEARCH_SEQUENCE_NO = #{searchSequenceNo,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactorCode != null" >
+        MANUFACTOR_CODE = #{manufactorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactorName != null" >
+        MANUFACTOR_NAME = #{manufactorName,jdbcType=VARCHAR},
+      </if>
+      <if test="jyModelCode != null" >
+        JY_MODEL_CODE = #{jyModelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="industryModelCode != null" >
+        INDUSTRY_MODEL_CODE = #{industryModelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="carType2 != null" >
+        CAR_TYPE2 = #{carType2,jdbcType=VARCHAR},
+      </if>
+      <if test="carType3 != null" >
+        CAR_TYPE3 = #{carType3,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseFlag != null" >
+        LICENSE_FLAG = #{licenseFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="countryNature != null" >
+        COUNTRY_NATURE = #{countryNature,jdbcType=VARCHAR},
+      </if>
+      <if test="otherProvinceFlag != null" >
+        OTHER_PROVINCE_FLAG = #{otherProvinceFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="visitFlag != null" >
+        VISIT_FLAG = #{visitFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="carTransfer != null" >
+        CAR_TRANSFER = #{carTransfer,jdbcType=VARCHAR},
+      </if>
+      <if test="loanVehicleFlag != null" >
+        LOAN_VEHICLE_FLAG = #{loanVehicleFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="createdDate != null" >
+        CREATED_DATE = #{createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedDate != null" >
+        UPDATED_DATE = #{updatedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deletedDate != null" >
+        DELETED_DATE = #{deletedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deletedFlag != null" >
+        DELETED_FLAG = #{deletedFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null" >
+        START_DATE = #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endDate != null" >
+        END_DATE = #{endDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validstatus != null" >
+        VALIDSTATUS = #{validstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="runAreaCode != null" >
+        RUN_AREA_CODE = #{runAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="checkNo != null" >
+        CHECK_NO = #{checkNo,jdbcType=VARCHAR},
+      </if>
+      <if test="checkCode != null" >
+        CHECK_CODE = #{checkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="pmuseType != null" >
+        PMUSE_TYPE = #{pmuseType,jdbcType=VARCHAR},
+      </if>
+      <if test="rackNo != null" >
+        RACK_NO = #{rackNo,jdbcType=VARCHAR},
+      </if>
+      <if test="limitloadPerson != null" >
+        LIMITLOAD_PERSON = #{limitloadPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="ineffectualDate != null" >
+        INEFFECTUAL_DATE = #{ineffectualDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vehicleBrand2 != null" >
+        VEHICLE_BRAND2 = #{vehicleBrand2,jdbcType=VARCHAR},
+      </if>
+      <if test="lastcheckDate != null" >
+        LASTCHECK_DATE = #{lastcheckDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rejectDate != null" >
+        REJECT_DATE = #{rejectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="haulage != null" >
+        HAULAGE = #{haulage,jdbcType=VARCHAR},
+      </if>
+      <if test="channelType != null" >
+        CHANNEL_TYPE = #{channelType,jdbcType=VARCHAR},
+      </if>
+      <if test="salePrice != null" >
+        SALE_PRICE = #{salePrice,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclecateGory != null" >
+        VEHICLECATE_GORY = #{vehiclecateGory,jdbcType=VARCHAR},
+      </if>
+      <if test="useType != null" >
+        USE_TYPE = #{useType,jdbcType=VARCHAR},
+      </if>
+      <if test="trafficState != null" >
+        TRAFFIC_STATE = #{trafficState,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicleCategory != null" >
+        VEHICLE_CATEGORY = #{vehicleCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyNumber != null" >
+        IDENTIFY_NUMBER = #{identifyNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        MOBILE = #{mobile,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where LICENSE_NO = #{licenseNo,jdbcType=VARCHAR}
+      and OWNER = #{owner,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.baobeisystem.entity.CarInfo" >
+    update CAR_INFO
+    set ENGINE_NO = #{engineNo,jdbcType=VARCHAR},
+      FRAME_NO = #{frameNo,jdbcType=VARCHAR},
+      VIN_NO = #{vinNo,jdbcType=VARCHAR},
+      FAMILY_CODE = #{familyCode,jdbcType=VARCHAR},
+      FAMILY_NAME = #{familyName,jdbcType=VARCHAR},
+      MODEL_CODE = #{modelCode,jdbcType=VARCHAR},
+      MODEL_CNAME = #{modelCname,jdbcType=VARCHAR},
+      IMPORT_FLAG = #{importFlag,jdbcType=VARCHAR},
+      CAR_NAME = #{carName,jdbcType=VARCHAR},
+      ENROLL_DATE = #{enrollDate,jdbcType=TIMESTAMP},
+      RUN_MILES = #{runMiles,jdbcType=DOUBLE},
+      EXHAUST_SCALE = #{exhaustScale,jdbcType=VARCHAR},
+      FUEL_TYPE = #{fuelType,jdbcType=VARCHAR},
+      SEAT_COUNT = #{seatCount,jdbcType=INTEGER},
+      TON_COUNT = #{tonCount,jdbcType=DOUBLE},
+      KERB_MASS = #{kerbMass,jdbcType=DOUBLE},
+      BRAND_CODE = #{brandCode,jdbcType=VARCHAR},
+      BRAND_NAME = #{brandName,jdbcType=VARCHAR},
+      PURCHASE_PRICE = #{purchasePrice,jdbcType=DOUBLE},
+      ACTUAL_VALUE = #{actualValue,jdbcType=DOUBLE},
+      COLOR_CODE = #{colorCode,jdbcType=VARCHAR},
+      MAKE_DATE = #{makeDate,jdbcType=TIMESTAMP},
+      TRANSFER_DATE = #{transferDate,jdbcType=TIMESTAMP},
+      QUERY_CODE = #{queryCode,jdbcType=VARCHAR},
+      SEARCH_SEQUENCE_NO = #{searchSequenceNo,jdbcType=VARCHAR},
+      MANUFACTOR_CODE = #{manufactorCode,jdbcType=VARCHAR},
+      MANUFACTOR_NAME = #{manufactorName,jdbcType=VARCHAR},
+      JY_MODEL_CODE = #{jyModelCode,jdbcType=VARCHAR},
+      INDUSTRY_MODEL_CODE = #{industryModelCode,jdbcType=VARCHAR},
+      CAR_TYPE2 = #{carType2,jdbcType=VARCHAR},
+      CAR_TYPE3 = #{carType3,jdbcType=VARCHAR},
+      LICENSE_FLAG = #{licenseFlag,jdbcType=VARCHAR},
+      COUNTRY_NATURE = #{countryNature,jdbcType=VARCHAR},
+      OTHER_PROVINCE_FLAG = #{otherProvinceFlag,jdbcType=VARCHAR},
+      VISIT_FLAG = #{visitFlag,jdbcType=VARCHAR},
+      CAR_TRANSFER = #{carTransfer,jdbcType=VARCHAR},
+      LOAN_VEHICLE_FLAG = #{loanVehicleFlag,jdbcType=VARCHAR},
+      CREATED_DATE = #{createdDate,jdbcType=TIMESTAMP},
+      UPDATED_DATE = #{updatedDate,jdbcType=TIMESTAMP},
+      DELETED_DATE = #{deletedDate,jdbcType=TIMESTAMP},
+      DELETED_FLAG = #{deletedFlag,jdbcType=VARCHAR},
+      START_DATE = #{startDate,jdbcType=TIMESTAMP},
+      END_DATE = #{endDate,jdbcType=TIMESTAMP},
+      VALIDSTATUS = #{validstatus,jdbcType=VARCHAR},
+      RUN_AREA_CODE = #{runAreaCode,jdbcType=VARCHAR},
+      CHECK_NO = #{checkNo,jdbcType=VARCHAR},
+      CHECK_CODE = #{checkCode,jdbcType=VARCHAR},
+      PMUSE_TYPE = #{pmuseType,jdbcType=VARCHAR},
+      RACK_NO = #{rackNo,jdbcType=VARCHAR},
+      LIMITLOAD_PERSON = #{limitloadPerson,jdbcType=VARCHAR},
+      INEFFECTUAL_DATE = #{ineffectualDate,jdbcType=TIMESTAMP},
+      VEHICLE_BRAND2 = #{vehicleBrand2,jdbcType=VARCHAR},
+      LASTCHECK_DATE = #{lastcheckDate,jdbcType=TIMESTAMP},
+      REJECT_DATE = #{rejectDate,jdbcType=TIMESTAMP},
+      STATUS = #{status,jdbcType=VARCHAR},
+      HAULAGE = #{haulage,jdbcType=VARCHAR},
+      CHANNEL_TYPE = #{channelType,jdbcType=VARCHAR},
+      SALE_PRICE = #{salePrice,jdbcType=VARCHAR},
+      VEHICLECATE_GORY = #{vehiclecateGory,jdbcType=VARCHAR},
+      USE_TYPE = #{useType,jdbcType=VARCHAR},
+      TRAFFIC_STATE = #{trafficState,jdbcType=VARCHAR},
+      VEHICLE_CATEGORY = #{vehicleCategory,jdbcType=VARCHAR},
+      IDENTIFY_NUMBER = #{identifyNumber,jdbcType=VARCHAR},
+      MOBILE = #{mobile,jdbcType=VARCHAR}
+    where LICENSE_NO = #{licenseNo,jdbcType=VARCHAR}
+      and OWNER = #{owner,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="selectByLicenseNo" parameterType="string" resultMap="BaseResultMap">
+  	select * from CAR_INFO where LICENSE_NO=#{LICENSE_NO}
+  </select>
+  
+  <!-- 根据车型BRAND_NAME进行模糊查询 -->
+  <select id="selectByBrandName" parameterType="string" resultMap="BaseResultMap">
+  	select * from CAR_INFO where BRAND_NAME like "%"#{BRAND_NAME}"%"
+  </select>  
+  
+</mapper>
